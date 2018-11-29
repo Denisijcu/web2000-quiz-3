@@ -99,29 +99,36 @@ s6.addEventListener(
 
 function play(n) {
   if (lucykNumber === n) {
+    modal.style.display = 'block';
+    pic.style.display = 'block';
+    pic.classList = 'animated flash';
+    var dls = '';
+    if (n === 1) {
+      dls =
+        'You have won $ <h3> <span style="color:blue">$</span> <span  class="animated flash">2</span></h3>';
+    } else if (n === 2) {
+      dls =
+        'Good! You have won <h3> <span style="color:blue">$</span> <span class="animated flash">4 </span> </h3>';
+    } else if (n === 3) {
+      dls =
+        'Cool! You have won <h3> <span style="color:blue">$</span><span class="animated flash"> 12 </span> </h3>';
+    } else if (n === 4) {
+      dls =
+        'Great! You have won <h3> <span style="color:blue">$</span></span><span class="animated flash"> 34</span> </h3>';
+    } else if (n === 5) {
+      dls =
+        'Awesome! You have won <h3><span style="color:blue">$</span> </span><span class="animated flash">123</span> </h3> ';
+    } else if (n === 6) {
+      dls =
+        'Wonderfull, Congratulation You have won <h3><span style="color:blue">$</span></span><span class="animated flash"> 1, 234 </span></h3>';
+    }
+
     var winsound = ` <audio id="cAudio"  autoplay>
         <source src="img/ding.mp3" type="audio/mp3">
          </audio>`;
     sound.innerHTML = winsound;
-    modal.style.display = 'block';
-    pic.style.display = 'block';
-    pic.classList = 'animated flash';
-    var dls = 0;
-    if (n === 1) {
-      dls = 'You have won $ 2';
-    } else if (n === 2) {
-      dls = 'Good! You have won $ 4';
-    } else if (n === 3) {
-      dls = 'Cool! You have won $ 12';
-    } else if (n === 4) {
-      dls = 'Great! You have won $ 34';
-    } else if (n === 5) {
-      dls = 'Awesome! You have won $ 123';
-    } else if (n === 6) {
-      dls = 'Wonderfull, Congratulation You have won $ 1, 234';
-    }
 
-    nlucky.innerHTML = `The Lucky number is ${n} <br> ${dls}`;
+    nlucky.innerHTML = `The Lucky number is <br><span class="animated flash" style="color: gold; font-size:50px; font-weight:bold; text-align:center;">${n}</span> <br> ${dls}</h1> `;
   }
   lucykNumber = Math.floor(Math.random() * 6);
   if (t > 6) {
