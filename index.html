@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,9 +30,10 @@
     <div class="carta">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator winner" src="img/winner.jpg">
+                <img class="activator winner" id="pic" src="img/winner.jpg">
             </div>
             <div class="card-content">
+                <p id="nlucky"></p>
                 <p><a href="#" onclick="{document.querySelector('.carta').style.display='none';}">Close</a></p>
             </div>
         </div>
